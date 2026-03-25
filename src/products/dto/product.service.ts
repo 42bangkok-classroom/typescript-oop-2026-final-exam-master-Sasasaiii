@@ -1,6 +1,6 @@
 
 import { Injectable } from '@nestjs/common';
-import { Product } from './Productinterface';
+import { Product } from './product.interface';
 import * as fs from 'fs';
 import * as path from 'path'
 
@@ -14,11 +14,11 @@ export class ProductService {
     this.Product.push(Product);
   }
   
-
-
   findAll(): Product[] {
     const filePath = path.join(process.cwd(), 'products.json');
     const raw = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(raw);
   }
+
+  
 }

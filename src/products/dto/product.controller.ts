@@ -1,7 +1,7 @@
 
 import { Controller, Get, Post } from '@nestjs/common';
-import { Product } from './Productinterface';
-import { ProductService } from './ProductService';
+import { Product } from './product.interface';
+import { ProductService } from './product.service';
 
 
 @Controller('product')
@@ -13,8 +13,9 @@ export class ProductController {
     return 'Test';
   }
 
+
   @Get()
-  findAll(): any {
+  findAll():any {
     return this.productService.findAll();
   }
 }
