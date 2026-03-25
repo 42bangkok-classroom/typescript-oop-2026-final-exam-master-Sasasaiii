@@ -15,7 +15,7 @@ export class PurchaseService {
   }
   
   findAll(): Pruchase[] {
-    const filePath = path.join(process.cwd(), 'products.json');
+    const filePath = path.join(process.cwd(), './data/products.json');
     const raw = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(raw);
   }
